@@ -11,7 +11,7 @@
 				margin: 50px auto;
 			}
 			
-			#parent-component, #child-component1, #child-component2{
+			#parent-component, #child-component1, #child-component2,#child-component3{
 				display: none;
 			}
 			
@@ -27,6 +27,7 @@
 		<template id="parent-component">
 			<child-component1></child-component1>
 			<child-component2></child-component2>
+			<child-component3></child-component3>
 			<button v-on:click="showChildComponentData">显示子组件的数据</button>
 		</template>
 
@@ -37,7 +38,10 @@
 		<template id="child-component2">
 			<h2>This is child component 2</h2>
 		</template>
-
+		
+		<template id="child-component3">
+			<h2>This is child component 3</h2>
+		</template>
 		<script src="js/vue.js"></script>
 		<script>
 			Vue.component('parent-component', {
@@ -56,6 +60,14 @@
 						data: function() {
 							return {
 								msg: 'child component 222222'
+							}
+						}
+					},
+					'child-component3': {
+						template: '#child-component3',
+						data: function() {
+							return {
+								msg: 'child component 33333'
 							}
 						}
 					}
